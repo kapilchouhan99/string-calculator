@@ -1,5 +1,6 @@
 class Calculator
   def add_numbers(input)
-    0
+    return 0 unless input.present?
+    input.to_i
   end
 end
