@@ -11,5 +11,10 @@ RSpec.describe Calculator, type: :model do
       calculator = Calculator.new
       expect(calculator.add_numbers("5")).to eq(5)
     end
+
+    it 'returns the sum of input in integer' do
+      calculator = Calculator.new
+      expect(calculator.add_numbers("2")).to eq(2)
+    end
   end
 end
