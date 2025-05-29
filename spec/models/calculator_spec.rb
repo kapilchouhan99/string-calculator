@@ -21,5 +21,9 @@ RSpec.describe Calculator, type: :model do
     it 'returns the sum of multiple numbers' do
       expect(@calculator.add_numbers("2,5,6,1,6")).to eq(20)
     end
+
+    it 'ignores newline characters as separators and returns the sum of multiple numbers' do
+      expect(@calculator.add_numbers("2,5,6\n6,6")).to eq(25)
+    end
   end
 end
