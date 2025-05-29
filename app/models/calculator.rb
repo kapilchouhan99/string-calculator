@@ -1,2 +1,2 @@
-class Calculator < ApplicationRecord
+class Calculator
 end
