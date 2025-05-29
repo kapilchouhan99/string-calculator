@@ -1,9 +1,13 @@
 class Calculator
   def add_numbers(input)
-    return 0 unless input.present?
+    return 0 if input.nil? || input.strip.empty?
 
     numbers = extract_numbers(input)
-    numbers.map(&:to_i).sum
+    mapped_numbers = numbers.map(&:to_i)
+    negatives = mapped_numbers.select { |num| num < 0 }
+    raise "negative numbers not allowed: #{negatives.join(', ')}" unless negatives.empty?
+
+    mapped_numbers.sum
   end
 
   private
